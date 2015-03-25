@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Добро пожаловать на временную страницу</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="../../../resources/css/bootstrap.min.css" rel="stylesheet" media="screen" th:href="@{/resources/css/bootstrap.min.css}"/>
+    <link href="../../../resources/css/core.css" rel="stylesheet" media="screen" th:href="@{/resources/css/core.css}" />
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="../../../resources/js/bootstrap.min.js" th:src="@{/resources/js/bootstrap.min.js}"></script>
+</head>
+<body>
+<div th:replace="fragments/header :: header">Header</div>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="jumbotron">
+                <h1>
+                    Добро пожаловать на сайт поиска работы!
+                </h1>
+                <p>
+                    Цель данного ресурса помочь выложить свое собственное резюме, либо найти человека, которого ищет ваша компания. Для того, чтобы немедленно начать работу с ресурсом не забудьте зарегистрироваться!
+                </p>
+
+            </div>
+            <div class="row clearfix">
+                <div class="col-md-4 column">
+                </div>
+                <div class="col-md-4 column">
+                    <a href="/signup" th:href="@{/signup}" class="btn btn-success btn-lg btn-block">Зарегистрироваться</a>
+                </div>
+                <div class="col-md-4 column">
+                </div>
+            </div>
+        </div>
+        <div th:replace="fragments/footer :: footer">&copy; Ниже некуда</div>
+    </div>
+</div>
+</body>
+</html>
