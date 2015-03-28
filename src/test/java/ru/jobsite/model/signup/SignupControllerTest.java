@@ -1,14 +1,12 @@
 package ru.jobsite.model.signup;
 
 import org.junit.Test;
+import ru.jobsite.model.config.WebAppConfigurationAware;
 
 import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.containsString;
-import static org.hamcrest.Matchers.equalTo;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-
-import ru.jobsite.model.config.WebAppConfigurationAware;
 
 public class SignupControllerTest extends WebAppConfigurationAware {
     @Test
@@ -17,10 +15,10 @@ public class SignupControllerTest extends WebAppConfigurationAware {
                 .andExpect(model().attributeExists("signupForm"))
                 .andExpect(view().name("signup/signup"))
                 .andExpect(content().string(
-                        allOf(
-                                containsString("<title>Signup</title>"),
-                                containsString("<legend>Please Sign Up</legend>")
-                        ))
+                                allOf(
+                                        containsString("<title>Signup</title>"),
+                                        containsString("<legend>Please Sign Up</legend>")
+                                ))
                 );
     }
 }

@@ -1602,11 +1602,23 @@
       <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
       <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
     </table>
-    <table name="user" schema="public" catalog="postgres" type="TABLE">
-      <column name="name" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
-      <column name="password" sqlType="text" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
-      <column name="id" sqlType="bigserial" precision="19" scale="0" nullable="false" jdbcType="-5" def="bmV4dHZhbCgnaWQnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
-      <primary-key name="user_pkey" columns="id"/>
+    <table name="resume" schema="public" catalog="postgres" type="TABLE">
+      <column name="id" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="birthdate" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
+      <column name="city" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="crossover" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+      <column name="exp" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+      <column name="faculty" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="fullname" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="grade" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="nationality" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="nativelang" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="phonenumber" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="sex" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+      <column name="specialization" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="universityname" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="year" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="resume_pkey" columns="id"/>
     </table>
     <procedure name="RI_FKey_cascade_del" schema="pg_catalog" catalog="postgres" type="2" remarks="cmVmZXJlbnRpYWwgaW50ZWdyaXR5IE9OIERFTEVURSBDQVNDQURF">
       <prototype>

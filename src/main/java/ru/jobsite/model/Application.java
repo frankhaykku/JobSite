@@ -1,3 +1,4 @@
 package ru.jobsite.model;
 
-public interface Application {}
+public interface Application {
+}

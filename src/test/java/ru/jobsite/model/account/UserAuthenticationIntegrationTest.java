@@ -6,14 +6,13 @@ import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.web.context.HttpSessionSecurityContextRepository;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.ResultMatcher;
+import ru.jobsite.model.config.WebSecurityConfigurationAware;
 
 import javax.servlet.http.HttpSession;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrl;
-
-import ru.jobsite.model.config.WebSecurityConfigurationAware;
 
 public class UserAuthenticationIntegrationTest extends WebSecurityConfigurationAware {
 
