@@ -4,6 +4,8 @@ package ru.jobsite.model.resume;
 import org.hibernate.validator.constraints.NotBlank;
 import ru.jobsite.model.resume.ResumeModel.Resume;
 
+import java.text.SimpleDateFormat;
+
 public class ResumeForm {
 
     private static final String NOT_BLANK_MESSAGE = "{notBlank.message}";
@@ -60,12 +62,34 @@ public class ResumeForm {
         return NOT_BLANK_MESSAGE;
     }
 
-    public Resume createUserResume() {
-        return new Resume(getFullName(), getBirthDate(), getSex(), getCity(), getPhoneNumber(), getNationality(),
+    public Resume createUserResume(String email) {
+        return new Resume(email, getFullName(), getBirthDate(), getSex(), getCity(), getPhoneNumber(), getNationality(),
                 getCrossOver(), getGrade(), getUniversityName(), getFaculty(), getSpecialization(), Integer.parseInt(getYear()),
                 getNativeLang(), getAnotherLang(), getExp(), getAboutDesc());
     }
 
+    public void convertResumeToForm(Resume resume) {
+        fullName = resume.getFullName();
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd.mm.yyyy");
+        birthDate = simpleDateFormat.format(resume.getBirthDate().getTime());
+
+        sex = String.valueOf(resume.isSex());
+        city = resume.getCity();
+        phoneNumber = resume.getPhoneNumber();
+        nationality = resume.getNationality();
+        crossOver = String.valueOf(resume.isCrossOver());
+        grade = resume.getGrade().toString();
+        universityName = resume.getUniversityName();
+        faculty = resume.getFaculty();
+        specialization = resume.getSpecialization();
+        year = String.valueOf(resume.getYear());
+        nativeLang = resume.getNativeLang();
+        anotherLang = resume.getAllAnotherLang();
+        exp = String.valueOf(resume.isExp());
+        aboutDesc = resume.getAboutDescription();
+    }
+    
     public String getFullName() {
         return fullName;
     }

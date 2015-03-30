@@ -18,7 +18,7 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#" th:href="@{/}">На главную</a></li>
-                <li><a href="#searchResume">Поиск резюме</a></li>
+                <li><a href="searchResume">Поиск резюме</a></li>
                 <li th:if="${#authorization.expression('isAuthenticated()')}"><a href="addResume">Добавить резюме</a>
                 </li>
             </ul>

@@ -10,42 +10,82 @@ import java.util.List;
 @SuppressWarnings("serial")
 @Entity
 @Table(name = "resume")
-public class Resume {
+@NamedQueries({
+        @NamedQuery(name = Resume.FIND_BY_FULL_NAME, query = "SELECT r FROM Resume r WHERE r.fullName LIKE :fullName"),
+        @NamedQuery(name = Resume.FIND_RESUME_BY_PHONE, query = "SELECT r FROM Resume r WHERE r.phoneNumber = :phone"),
+        @NamedQuery(name = Resume.FIND_RESUME_BY_LOGIN, query = "SELECT r FROM Resume r WHERE r.login = :login"),
+        @NamedQuery(name = Resume.FIND_RESUME_BY_ID, query = "SELECT r FROM Resume r WHERE r.id = :id"),
+})
+public class Resume implements java.io.Serializable {
+
+    public static final String FIND_BY_FULL_NAME = "Resume.findByFullName";
+    public static final String FIND_RESUME_BY_PHONE = "Resume.findResumeByPhone";
+    public static final String FIND_RESUME_BY_LOGIN = "Resume.findResumeByLogin";
+    public static final String FIND_RESUME_BY_ID = "Resume.findResumeById";
 
     @Id
     @GeneratedValue
+    @Column(name = "id")
     private long id;
 
-    private String email;
+    @Column(name = "login", length = 50)
+    private String login;
 
+    @Column(name = "fullName", length = 100)
     private String fullName;            // Полное имя
+
+    @Column(name = "birthDate", length = 12)
     private Calendar birthDate;         // Дата рождения
+
+    @Column(name = "sex", length = 2)
     private boolean sex;                // Пол (false - м, true - ж)
+
+    @Column(name = "city", length = 50)
     private String city;                // Город проживания
+
+    @Column(name = "phoneNumber", length = 15)
     private String phoneNumber;         // Номер телефона
-    private String nationality;         // Гражданство    
+
+    @Column(name = "nationality", length = 25)
+    private String nationality;         // Гражданство
+
+    @Column(name = "crossOver", length = 2)
     private boolean crossOver;          // Возможен ли переезд
 
+    @Column(name = "grade", length = 10)
     private educationGrade grade;       // Уровень обраования
+
+    @Column(name = "universityName", length = 50)
     private String universityName;      // Имя университета
+
+    @Column(name = "faculty", length = 50)
     private String faculty;             // Факультет
+
+    @Column(name = "specialization", length = 50)
     private String specialization;      // Специализация
+
+    @Column(name = "year", length = 4)
     private int year;                   // Год окончания
 
+    @Column(name = "nativeLang", length = 10)
     private String nativeLang;            // Родной язык
 
-    @Transient
+    @ElementCollection(fetch = FetchType.EAGER)
     private List<String> anotherLang = new ArrayList<String>();           // Другой язык (владение)
 
+    @Column(name = "exp", length = 2)
     private boolean exp;                // Опыт работы
+
+    @Column(name = "aboutDescription")
     private String aboutDescription;
 
     public Resume() {
     }
 
-    public Resume(String fullName, String birthDate, String sex, String city, String phoneNumber, String nationality,
+    public Resume(String login, String fullName, String birthDate, String sex, String city, String phoneNumber, String nationality,
                   String crossOver, String grade, String universityName, String faculty, String specialization, int year,
                   String nativeLang, String anotherLang, String exp, String aboutDescription) {
+        this.login = login;
         this.fullName = fullName;
         this.birthDate = Calendar.getInstance();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-mm-dd");
@@ -169,6 +209,18 @@ public class Resume {
         return id;
     }
 
+    public String getStringId() {
+        return String.valueOf(id);
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
     public String getFullName() {
         return fullName;
     }
@@ -287,5 +339,12 @@ public class Resume {
 
     public void setAboutDescription(String aboutDescription) {
         this.aboutDescription = aboutDescription;
+    }
+
+    public String quickInfo() {
+        return "Краткая информация:<br>" +
+                "Город проживания: " + getCity() + " " +
+                "Контактный телефон: " + getPhoneNumber() + " " +
+                "Образование: " + getGrade();
     }
 }

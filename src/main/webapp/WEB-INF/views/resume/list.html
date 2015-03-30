@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Список резюме по запросу</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="../../../resources/css/bootstrap.min.css" rel="stylesheet" media="screen"
+          th:href="@{/resources/css/bootstrap.min.css}"/>
+    <link href="../../../resources/css/core.css" rel="stylesheet" media="screen" th:href="@{/resources/css/core.css}"/>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="../../../resources/js/bootstrap.min.js" th:src="@{/resources/js/bootstrap.min.js}"></script>
+</head>
+<body>
+<div th:replace="fragments/header :: header">Header</div>
+<div class="container">
+    <div class="jumbotron" th:each="resume : ${resumeList}">
+        <h2 th:text="${resume.fullName}"></h2>
+        <h4>Краткая информация:</h4>
+        <h5 th:text="'Проживает в городе '+${resume.city}+'. Уровень образования: '+${resume.grade}+'. Связаться можно по телефону: '+
+        ${resume.phoneNumber}+'. Если заинтересовало резюме, жми на кнопку \'Просмотреть резюме\''"></h5>
+
+        <p>
+            <a class="btn btn-primary btn-lg" th:href="@{/viewResume(id=${resume.getId()})}">Просмотреть резюме</a>
+        </p>
+    </div>
+    <div th:replace="fragments/footer :: footer">&copy; Ниже некуда</div>
+</div>
+</body>
+</html>
