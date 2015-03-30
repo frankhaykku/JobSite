@@ -53,6 +53,9 @@ public class ResumeForm {
     @NotBlank(message = ResumeForm.NOT_BLANK_MESSAGE)
     private String exp;
 
+    @NotBlank(message = ResumeForm.NOT_BLANK_MESSAGE)
+    private String aboutDesc;
+
     public static String getNotBlankMessage() {
         return NOT_BLANK_MESSAGE;
     }
@@ -60,7 +63,7 @@ public class ResumeForm {
     public Resume createUserResume() {
         return new Resume(getFullName(), getBirthDate(), getSex(), getCity(), getPhoneNumber(), getNationality(),
                 getCrossOver(), getGrade(), getUniversityName(), getFaculty(), getSpecialization(), Integer.parseInt(getYear()),
-                getNativeLang(), getAnotherLang(), getExp());
+                getNativeLang(), getAnotherLang(), getExp(), getAboutDesc());
     }
 
     public String getFullName() {
@@ -183,6 +186,14 @@ public class ResumeForm {
         this.exp = exp;
     }
 
+    public String getAboutDesc() {
+        return aboutDesc;
+    }
+
+    public void setAboutDesc(String aboutDesc) {
+        this.aboutDesc = aboutDesc;
+    }
+
     @Override
     public String toString() {
         return "ResumeForm{" +
@@ -201,6 +212,7 @@ public class ResumeForm {
                 ", nativeLang='" + nativeLang + '\'' +
                 ", anotherLang='" + anotherLang + '\'' +
                 ", exp='" + exp + '\'' +
+                ", about='" + aboutDesc + '\'' +
                 '}';
     }
 }

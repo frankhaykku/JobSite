@@ -16,6 +16,8 @@ public class Resume {
     @GeneratedValue
     private long id;
 
+    private String email;
+
     private String fullName;            // Полное имя
     private Calendar birthDate;         // Дата рождения
     private boolean sex;                // Пол (false - м, true - ж)
@@ -36,13 +38,14 @@ public class Resume {
     private List<String> anotherLang = new ArrayList<String>();           // Другой язык (владение)
 
     private boolean exp;                // Опыт работы
+    private String aboutDescription;
 
     public Resume() {
     }
 
     public Resume(String fullName, String birthDate, String sex, String city, String phoneNumber, String nationality,
                   String crossOver, String grade, String universityName, String faculty, String specialization, int year,
-                  String nativeLang, String anotherLang, String exp) {
+                  String nativeLang, String anotherLang, String exp, String aboutDescription) {
         this.fullName = fullName;
         this.birthDate = Calendar.getInstance();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-mm-dd");
@@ -71,6 +74,7 @@ public class Resume {
         }
 
         this.exp = exp.equals("yes".toLowerCase());
+        this.aboutDescription = aboutDescription;
     }
 
     public boolean addNewAnotherLang(String lang) {
@@ -275,5 +279,13 @@ public class Resume {
 
     public void setExp(boolean exp) {
         this.exp = exp;
+    }
+
+    public String getAboutDescription() {
+        return aboutDescription;
+    }
+
+    public void setAboutDescription(String aboutDescription) {
+        this.aboutDescription = aboutDescription;
     }
 }

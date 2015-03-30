@@ -189,6 +189,12 @@
                                 </option>
                             </select>
                         </div>
+                        <div class="form-group" th:classappend="${#fields.hasErrors('aboutDesc')}? 'has-error'">
+                            <label>
+                                О себе:
+                            </label>
+                            <textarea class="form-control" th:field="*{aboutDesc}"></textarea>
+                        </div>
                     </div>
                 </div>
                 <button type="submit" class="btn btn-default btn-block btn-warning btn-lg">
