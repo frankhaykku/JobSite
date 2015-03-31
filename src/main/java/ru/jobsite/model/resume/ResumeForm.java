@@ -58,6 +58,8 @@ public class ResumeForm {
     @NotBlank(message = ResumeForm.NOT_BLANK_MESSAGE)
     private String aboutDesc;
 
+    private String avatarName;
+
     public static String getNotBlankMessage() {
         return NOT_BLANK_MESSAGE;
     }
@@ -65,7 +67,7 @@ public class ResumeForm {
     public Resume createUserResume(String email) {
         return new Resume(email, getFullName(), getBirthDate(), getSex(), getCity(), getPhoneNumber(), getNationality(),
                 getCrossOver(), getGrade(), getUniversityName(), getFaculty(), getSpecialization(), Integer.parseInt(getYear()),
-                getNativeLang(), getAnotherLang(), getExp(), getAboutDesc());
+                getNativeLang(), getAnotherLang(), getExp(), getAboutDesc(), getAvatarName());
     }
 
     public void convertResumeToForm(Resume resume) {
@@ -89,7 +91,15 @@ public class ResumeForm {
         exp = resume.isExp() ? "Да" : "Нет";
         aboutDesc = resume.getAboutDescription();
     }
-    
+
+    public String getAvatarName() {
+        return avatarName;
+    }
+
+    public void setAvatarName(String avatarName) {
+        this.avatarName = avatarName;
+    }
+
     public String getFullName() {
         return fullName;
     }

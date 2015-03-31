@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title th:text="#{view.index.title}">Добро пожаловать!</title>
+    <title>Добавление нового резюме</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link href="../../../resources/css/bootstrap.min.css" rel="stylesheet" media="screen"
           th:href="@{/resources/css/bootstrap.min.css}"/>
@@ -192,6 +192,14 @@
                                 О себе:
                             </label>
                             <textarea class="form-control" th:field="*{aboutDesc}"></textarea>
+                        </div>
+                        <div class="form-group" th:classappend="${#fields.hasErrors('avatarName')}? 'has-error'">
+                            <label>
+                                Название аватара:
+                            </label>
+                            <input type="text" class="form-control"
+                                   placeholder="Ничего не пишите, если не знаете для чего это поле ;)"
+                                   th:field="*{avatarName}"/>
                         </div>
                     </div>
                 </div>

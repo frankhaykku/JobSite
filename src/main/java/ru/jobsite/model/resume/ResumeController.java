@@ -48,6 +48,10 @@ public class ResumeController {
 
         if (resumeForm != null && account != null) {
             System.out.println(resumeForm);
+
+            if (resumeForm.getAvatarName().isEmpty())
+                resumeForm.setAvatarName("anonymous.png");
+            
             account.addResume(resumeForm.createUserResume(principal.getName()));
             accountRepository.saveResume(account.getResume());
         }

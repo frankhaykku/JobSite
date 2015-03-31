@@ -79,12 +79,14 @@ public class Resume implements java.io.Serializable {
     @Column(name = "aboutDescription")
     private String aboutDescription;
 
+    private String avatarName;
+
     public Resume() {
     }
 
     public Resume(String login, String fullName, String birthDate, String sex, String city, String phoneNumber, String nationality,
                   String crossOver, String grade, String universityName, String faculty, String specialization, int year,
-                  String nativeLang, String anotherLang, String exp, String aboutDescription) {
+                  String nativeLang, String anotherLang, String exp, String aboutDescription, String avatarName) {
         this.login = login;
         this.fullName = fullName;
         this.birthDate = Calendar.getInstance();
@@ -115,6 +117,7 @@ public class Resume implements java.io.Serializable {
 
         this.exp = exp.equals("yes".toLowerCase());
         this.aboutDescription = aboutDescription;
+        this.avatarName = avatarName;
 
         System.out.println(this);
     }
@@ -205,6 +208,14 @@ public class Resume implements java.io.Serializable {
                 "\nРодной язык : " + nativeLang +
                 "\nДругие языки: " + getAllAnotherLang() +
                 "\nОпыт: " + (exp ? "Есть" : "Нет");
+    }
+
+    public String getAvatarName() {
+        return avatarName;
+    }
+
+    public void setAvatarName(String avatarName) {
+        this.avatarName = avatarName;
     }
 
     public long getId() {

@@ -10,10 +10,17 @@
     <script src="../../../resources/js/bootstrap.min.js" th:src="@{/resources/js/bootstrap.min.js}"></script>
 </head>
 <body>
+<!-- src="http://img1.wikia.nocookie.net/__cb20130224033616/villains/images/4/46/NikoBellic.jpg" -->
 <div th:replace="fragments/header :: header">Header</div>
 <div class="container">
     <div class="jumbotron" th:each="resume : ${resumeList}">
-        <h2 th:text="${resume.fullName}"></h2>
+        <table>
+            <tr>
+                <td><img class="img-circle" th:src="@{${resume.getAvatarName()}}" height="128" th:width="128"></img>
+                </td>
+                <td><h2 th:text="${resume.fullName}"></h2></td>
+            </tr>
+        </table>
         <h4>Краткая информация:</h4>
         <h5 th:text="'Проживает в городе '+${resume.city}+'. Уровень образования: '+${resume.grade}+'. Связаться можно по телефону: '+
         ${resume.phoneNumber}+'. Если заинтересовало резюме, жми на кнопку \'Просмотреть резюме\''"></h5>
