@@ -43,7 +43,7 @@ public class SignupController {
             return SIGNUP_VIEW_NAME;
         }
 
-        if (userService.checkIfUserIsExist(signupForm.createAccount())) {
+        if (accountRepository.findByEmailOrLogin(signupForm.getLogin()) != null || accountRepository.findByEmailOrLogin(signupForm.getEmail()) != null) {
             errors.rejectValue("login", "Login or email exists", "Логин или эл. адресс существуют!");
             errors.rejectValue("email", "Login or email exists", "Логин или эл. адресс существуют!");
             return SIGNUP_VIEW_NAME;

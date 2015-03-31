@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Личный кабинет</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="../../../resources/css/bootstrap.min.css" rel="stylesheet" media="screen"
+          th:href="@{/resources/css/bootstrap.min.css}"/>
+    <link href="../../../resources/css/core.css" rel="stylesheet" media="screen" th:href="@{/resources/css/core.css}"/>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="../../../resources/js/bootstrap.min.js" th:src="@{/resources/js/bootstrap.min.js}"></script>
+</head>
+<body>
+<div th:replace="fragments/header :: header">Header</div>
+<div class="container">
+    <div class="page-header pull-right">
+    </div>
+    <div class="form-group">
+    </div>
+    <table class="table">
+        <tbody>
+        <tr>
+        </tr>
+        </tbody>
+    </table>
+    <div class="page-header">
+        <h3 th:text="'Здраствуйте пользователь, ' + ${username} + '!'">
+        </h3>
+    </div>
+    <li th:if="${isResumes == true}" style="list-style: none"><a class="btn btn-lg btn-info"
+                                                                 th:href="@{/myResumes(username=${username})}">Просмотреть
+        все ваши резюме</a></li>
+    <li th:if="${isResumes == false}" style="list-style: none"><a class="btn btn-lg btn-warning"
+                                                                  th:href="@{/addResume}">Добавить резюме</a></li>
+    <div th:replace="fragments/footer :: footer">&copy; Ниже некуда</div>
+</div>
+</body>
+</html>
