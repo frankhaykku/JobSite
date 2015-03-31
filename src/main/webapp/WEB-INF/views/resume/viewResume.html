@@ -34,21 +34,13 @@
                             <label>
                                 Дата рождения:
                             </label>
-                            <input type="date" class="form-control" placeholder="Введите дату вашего рождения"
-                                   th:field="*{birthDate}"/>
+                            <input type="text" class="form-control" th:field="*{birthDate}"/>
                         </div>
                         <div class="form-group" th:classappend="${#fields.hasErrors('sex')}? 'has-error'">
                             <label>
                                 Пол:
                             </label>
-                            <select class="form-control" th:field="*{sex}">
-                                <option value="male">
-                                    Мужской
-                                </option>
-                                <option value="female">
-                                    Женский
-                                </option>
-                            </select>
+                            <input type="text" class="form-control" th:field="*{sex}"/>
                         </div>
                         <div class="form-group" th:classappend="${#fields.hasErrors('city')}? 'has-error'">
                             <label>
@@ -75,14 +67,7 @@
                             <label>
                                 Возможна ли работа в другом городе:
                             </label>
-                            <select class="form-control" th:field="*{crossOver}">
-                                <option value="yes">
-                                    Да
-                                </option>
-                                <option value="no">
-                                    Нет
-                                </option>
-                            </select>
+                            <input type="text" class="form-control" th:field="*{crossOver}"/>
                         </div>
                     </div>
                 </div>
@@ -97,23 +82,7 @@
                             <label>
                                 Сведение об образовании:
                             </label>
-                            <select class="form-control" th:field="*{grade}">
-                                <option value="none">
-                                    Нет
-                                </option>
-                                <option value="middle">
-                                    Среднее
-                                </option>
-                                <option value="high_middle">
-                                    Среднее высшее
-                                </option>
-                                <option value="not_high">
-                                    Неоконченное высшее
-                                </option>
-                                <option value="high">
-                                    Высшее
-                                </option>
-                            </select>
+                            <input type="text" class="form-control" th:field="*{grade}"/>
                         </div>
                         <div class="form-group" th:classappend="${#fields.hasErrors('universityName')}? 'has-error'">
                             <label>
@@ -140,9 +109,7 @@
                             <label>
                                 Год окончания:
                             </label>
-                            <select class="form-control" th:field="*{year}" th:selected="*{year}">
-                                <option th:each="year : ${years}" th:text="${year}" th:value="${year}"></option>
-                            </select>
+                            <input type="text" class="form-control" th:field="*{year}"/>
                         </div>
                     </div>
                 </div>
@@ -178,14 +145,7 @@
                             <label>
                                 Есть ли у вас опыт?
                             </label>
-                            <select class="form-control" th:field="*{exp}">
-                                <option value="yes">
-                                    Да
-                                </option>
-                                <option value="no">
-                                    Нет
-                                </option>
-                            </select>
+                            <input type="text" class="form-control" th:field="*{exp}"/>
                         </div>
                         <div class="form-group" th:classappend="${#fields.hasErrors('aboutDesc')}? 'has-error'">
                             <label>

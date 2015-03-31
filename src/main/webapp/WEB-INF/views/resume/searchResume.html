@@ -14,7 +14,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1 class="text-center">Поиск:</h1>
+            <h1 class="text-center">Поиск резюме:</h1>
         </div>
     </div>
     <div class="row">
@@ -22,7 +22,7 @@
             <form role="form" th:action="@{/searchResume}" method="post">
                 <div class="form-group">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Введите ФИО или город"
+                        <input type="text" class="form-control" placeholder="Кого хотим найти ? :3"
                                th:name="search"></input>
                         <span class="input-group-btn">
                             <button type="submit" class="btn btn-success">
@@ -30,6 +30,10 @@
                             </button>
                         </span>
                     </div>
+                    <input type="radio" name="group" th:name="choice" value="fullName" checked="checked">Поиск по
+                    имени</input>
+                    <input type="radio" name="group" th:name="choice" value="city">Поиск по городу</input>
+                    <input type="radio" name="group" th:name="choice" value="login">Поиск по логину</input>
                 </div>
             </form>
         </div>

@@ -62,9 +62,17 @@ public class ResumeController {
     }
 
     @RequestMapping(value = "searchResume", method = RequestMethod.POST)
-    public String searchResume(ModelMap model, @RequestParam("search") String search) {
+    public String searchResume(ModelMap model, @RequestParam("search") String search, @RequestParam("choice") String choice) {
+       
         if (!search.isEmpty()) {
-            List<Resume> resumeList = accountRepository.findResumeByLogin(search);
+            List<Resume> resumeList = null;
+
+            if ("fullName".equals(choice))
+                resumeList = accountRepository.findByFullName(search);
+            else if ("city".equals(choice))
+                resumeList = accountRepository.findResumeByCity(search);
+            else if ("login".equals(choice))
+                resumeList = accountRepository.findResumeByLogin(search);
 
             if (resumeList.size() > 0) {
                 model.addAttribute(resumeList);

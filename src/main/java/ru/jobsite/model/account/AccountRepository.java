@@ -46,20 +46,19 @@ public class AccountRepository {
     public List<Resume> findByFullName(String fullName) {
         try {
             return entityManager.createNamedQuery(Resume.FIND_BY_FULL_NAME, Resume.class)
-                    .setParameter("fullName", fullName)
+                    .setParameter("fullName", "%" + fullName + "%")
                     .getResultList();
         } catch (PersistenceException e) {
             return null;
         }
     }
 
-    public Resume findResumeByPhone(String phone) {
+    public List<Resume> findResumeByCity(String city) {
         try {
-            return entityManager.createNamedQuery(Resume.FIND_RESUME_BY_PHONE, Resume.class)
-                    .setParameter("phone", phone)
-                    .getSingleResult();
+            return entityManager.createNamedQuery(Resume.FIND_RESUME_BY_CITY, Resume.class)
+                    .setParameter("city", "%" + city + "%")
+                    .getResultList();
         } catch (PersistenceException e) {
-            System.out.println(e);
             return null;
         }
     }

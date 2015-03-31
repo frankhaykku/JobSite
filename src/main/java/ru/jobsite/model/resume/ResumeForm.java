@@ -71,14 +71,14 @@ public class ResumeForm {
     public void convertResumeToForm(Resume resume) {
         fullName = resume.getFullName();
 
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd.mm.yyyy");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd.MM.yyyy");
         birthDate = simpleDateFormat.format(resume.getBirthDate().getTime());
 
-        sex = String.valueOf(resume.isSex());
+        sex = resume.isSex() ? "Женский" : "Мужской";
         city = resume.getCity();
         phoneNumber = resume.getPhoneNumber();
         nationality = resume.getNationality();
-        crossOver = String.valueOf(resume.isCrossOver());
+        crossOver = resume.isCrossOver() ? "Да" : "Нет";
         grade = resume.getGrade().toString();
         universityName = resume.getUniversityName();
         faculty = resume.getFaculty();
@@ -86,7 +86,7 @@ public class ResumeForm {
         year = String.valueOf(resume.getYear());
         nativeLang = resume.getNativeLang();
         anotherLang = resume.getAllAnotherLang();
-        exp = String.valueOf(resume.isExp());
+        exp = resume.isExp() ? "Да" : "Нет";
         aboutDesc = resume.getAboutDescription();
     }
     

@@ -12,14 +12,14 @@ import java.util.List;
 @Table(name = "resume")
 @NamedQueries({
         @NamedQuery(name = Resume.FIND_BY_FULL_NAME, query = "SELECT r FROM Resume r WHERE r.fullName LIKE :fullName"),
-        @NamedQuery(name = Resume.FIND_RESUME_BY_PHONE, query = "SELECT r FROM Resume r WHERE r.phoneNumber = :phone"),
         @NamedQuery(name = Resume.FIND_RESUME_BY_LOGIN, query = "SELECT r FROM Resume r WHERE r.login = :login"),
         @NamedQuery(name = Resume.FIND_RESUME_BY_ID, query = "SELECT r FROM Resume r WHERE r.id = :id"),
+        @NamedQuery(name = Resume.FIND_RESUME_BY_CITY, query = "SELECT r FROM Resume r WHERE r.city LIKE :city"),
 })
 public class Resume implements java.io.Serializable {
 
     public static final String FIND_BY_FULL_NAME = "Resume.findByFullName";
-    public static final String FIND_RESUME_BY_PHONE = "Resume.findResumeByPhone";
+    public static final String FIND_RESUME_BY_CITY = "Resume.findResumeByCity";
     public static final String FIND_RESUME_BY_LOGIN = "Resume.findResumeByLogin";
     public static final String FIND_RESUME_BY_ID = "Resume.findResumeById";
 
@@ -88,7 +88,7 @@ public class Resume implements java.io.Serializable {
         this.login = login;
         this.fullName = fullName;
         this.birthDate = Calendar.getInstance();
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-mm-dd");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         try {
             this.birthDate.setTime(simpleDateFormat.parse(birthDate));
         } catch (ParseException e) {
@@ -115,6 +115,8 @@ public class Resume implements java.io.Serializable {
 
         this.exp = exp.equals("yes".toLowerCase());
         this.aboutDescription = aboutDescription;
+
+        System.out.println(this);
     }
 
     public boolean addNewAnotherLang(String lang) {
