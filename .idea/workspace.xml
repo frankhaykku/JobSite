@@ -4,13 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/src/main/java/ru/jobsite/model/account/UserService.java" line="20" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="05885c0b-0031-4015-836b-85cdcd5e9e07" name="Default" comment="Добавлен поиск по резюме. Добавлена страница отображения результатов поиска и резюме( правда не отображает дату). Нужно вставить куча проверок, сделать все по - человечкски, но для начала нужно пойти поспать :)">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/jobsite/model/account/AccountRepository.java" afterPath="$PROJECT_DIR$/src/main/java/ru/jobsite/model/account/AccountRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/jobsite/model/resume/ResumeModel/Resume.java" afterPath="$PROJECT_DIR$/src/main/java/ru/jobsite/model/resume/ResumeModel/Resume.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/jobsite/model/resume/ResumeController.java" afterPath="$PROJECT_DIR$/src/main/java/ru/jobsite/model/resume/ResumeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/jobsite/model/resume/ResumeForm.java" afterPath="$PROJECT_DIR$/src/main/java/ru/jobsite/model/resume/ResumeForm.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/resume/searchResume.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/resume/searchResume.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/resume/viewResume.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/resume/viewResume.html" />
+    <list default="true" id="05885c0b-0031-4015-836b-85cdcd5e9e07" name="Default" comment="Исправлены ошибки в отображении резюме, добавлены ращличные варианты поиска резюме">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="JobSiteModel.iws" />
@@ -104,12 +98,11 @@
       <file leaf-file-name="ResumeForm.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/jobsite/model/resume/ResumeForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1001" max-vertical-offset="3145">
-              <caret line="89" column="44" selection-start-line="89" selection-start-column="44" selection-end-line="89" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="984" max-vertical-offset="3128">
+              <caret line="88" column="44" selection-start-line="88" selection-start-column="44" selection-end-line="88" selection-end-column="44" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3101#3102#0" expanded="true" />
-                <element signature="e#3132#3133#0" expanded="true" />
+                <element signature="e#3066#3067#0" expanded="true" />
+                <element signature="e#3097#3098#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -118,8 +111,8 @@
       <file leaf-file-name="searchResume.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/resume/searchResume.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.65499127" vertical-offset="204" max-vertical-offset="816">
-              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.65499127" vertical-offset="221" max-vertical-offset="833">
+              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -1079,7 +1072,7 @@
       <workItem from="1427145538907" duration="9468000" />
       <workItem from="1427317310931" duration="887000" />
       <workItem from="1427318218950" duration="814000" />
-      <workItem from="1427402927525" duration="54460000" />
+      <workItem from="1427402927525" duration="54517000" />
     </task>
     <task id="LOCAL-00001" summary="Вторая ревизия. Появилась возможность добавить свое резюме.">
       <created>1427573438189</created>
@@ -1099,11 +1092,17 @@
       <option name="project" value="LOCAL" />
       <updated>1427755524335</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Исправлены ошибки в отображении резюме, добавлены ращличные варианты поиска резюме">
+      <created>1427802142133</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1427802142133</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68947000" />
+    <option name="totallyTimeSpent" value="69004000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="22" width="1936" height="1066" extended-state="6" />
@@ -1114,7 +1113,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291536" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1984375" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1984375" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20833333" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1127,7 +1126,7 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34691745" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34691745" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1192,7 +1191,8 @@
     <MESSAGE value="Вторая ревизия. Появилась возможность добавить свое резюме." />
     <MESSAGE value="Добавлена проверка при регистрации, не позволяет создавать пользователей с уже существующим логином или эл. адресом. Добавлено еще одно поле в резюме" />
     <MESSAGE value="Добавлен поиск по резюме. Добавлена страница отображения результатов поиска и резюме( правда не отображает дату). Нужно вставить куча проверок, сделать все по - человечкски, но для начала нужно пойти поспать :)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлен поиск по резюме. Добавлена страница отображения результатов поиска и резюме( правда не отображает дату). Нужно вставить куча проверок, сделать все по - человечкски, но для начала нужно пойти поспать :)" />
+    <MESSAGE value="Исправлены ошибки в отображении резюме, добавлены ращличные варианты поиска резюме" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправлены ошибки в отображении резюме, добавлены ращличные варианты поиска резюме" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1600,12 +1600,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/jobsite/model/resume/ResumeForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1001" max-vertical-offset="3145">
-          <caret line="89" column="44" selection-start-line="89" selection-start-column="44" selection-end-line="89" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="984" max-vertical-offset="3128">
+          <caret line="88" column="44" selection-start-line="88" selection-start-column="44" selection-end-line="88" selection-end-column="44" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3101#3102#0" expanded="true" />
-            <element signature="e#3132#3133#0" expanded="true" />
+            <element signature="e#3066#3067#0" expanded="true" />
+            <element signature="e#3097#3098#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1718,8 +1717,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/resume/searchResume.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65499127" vertical-offset="204" max-vertical-offset="816">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.65499127" vertical-offset="221" max-vertical-offset="833">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding />
         </state>
       </provider>
